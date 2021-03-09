@@ -1,0 +1,27 @@
+<div class="card" *ngIf="product | async as prod">
+    <div class="card-header border-info ">
+        <button class="btn btn-primary" (click)="onprev()">Prev</button>&nbsp;
+        <button class="btn btn-primary" (click)="onback()">Back</button>&nbsp;
+        <button class="btn btn-primary" (click)="onnext()">Next</button>
+<h2>{{prod.productname}}</h2>
+    </div>
+    <div class="card-body">
+        <img [src]="prod.imageUrl">
+       <h3> {{prod.productdesc}}</h3>
+       <h3> {{prod.productprice}}</h3>
+       <h3>rating is : {{prod.rating}}</h3>
+
+       <h2>Reviews:</h2>
+       <div class="card" *ngFor="let review of prod.review">
+           <div class="card-header text-dark bg-success ">
+               <h3>{{review.author}}:{{review.rating}}</h3>
+
+           </div>
+           <div class="card-body">
+               <h4>{{review.email}}</h4>
+               <h4>{{review.desc}}</h4>
+           </div>
+       </div>
+    </div>
+</div><br>
+<app-review></app-review>

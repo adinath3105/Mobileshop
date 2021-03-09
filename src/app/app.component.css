@@ -1,0 +1,19 @@
+a{
+    color: white;
+}
+
+.links a{
+    text-decoration: none;
+    font-size: large;
+    text-transform: capitalize;
+    font-weight: normal;
+    color: whitesmoke;
+    
+    }
+    .links{
+        padding-left: 80px;
+    }
+    .icon {
+        
+        padding-left: 100px;
+    }

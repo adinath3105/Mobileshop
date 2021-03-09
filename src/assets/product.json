@@ -1,0 +1,32 @@
+[ {
+    "productid":101,
+    "imageUrl":"../assets/iphone.jpg",
+    "productname":"iphone 11",
+    "productdesc":"Apple phone",
+    "productprice":60000,
+    "rating":3,
+    "review":[
+      {
+        "author":"rahul",
+        "email":"rahul@gmail.com",
+        "rating":3,
+        "desc":"Amazing product"
+      }
+    ]
+  },
+  {
+    "productid":102,
+    "imageUrl":"../assets/realmi.jpg",
+    "productname":"realmi 5 pro",
+    "productdesc":"realmi phone",
+    "productprice":30000,
+    "rating":4.5
+  },
+  {
+    "productid":103,
+    "imageUrl":"../assets/samsung.jpg",
+    "productname":"samsung M10",
+    "productdesc":"samsung phone",
+    "productprice":40000,
+    "rating":5
+  }]

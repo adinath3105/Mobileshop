@@ -1,0 +1,40 @@
+
+<form (ngSubmit)="reviewForm.valid && onsubmit()" #reviewForm="ngForm" class="border border-success" style="padding:60px 60px 60px 60px;border-radius: 40px;">
+    <div class="form-group">
+      <label for="author" class="form-label">Author</label>
+      <input type="text" class="form-control" id="author" name="author"
+      [(ngModel)]="review.author" #author="ngModel" required>
+      <div class="alert alert-danger"
+      *ngIf="author.touched && author.invalid">
+          Author is required
+      </div>
+     </div>
+     <div class="form-group">
+        <label for="email" class="form-label">Email</label>
+        <input type="email" class="form-control" id="email" name="email" [(ngModel)]="review.email" #email="ngModel" required>
+        <div class="alert alert-danger"
+        *ngIf="email.touched && email.invalid">
+            Email is required
+        </div>
+       </div>
+       <div class="form-group">
+        <label for="rating" class="form-label">Rating</label>
+        <input type="text" class="form-control" id="rating" name="rating" [(ngModel)]="review.rating" #rating="ngModel" required>
+        <div class="alert alert-danger"
+        *ngIf="rating.touched && rating.invalid">
+            Rating is required
+        </div>
+       </div>
+       <div class="form-group">
+        <label for="desc" class="form-label">Description</label>
+        <input type="text" class="form-control" id="desc" name="desc" [(ngModel)]="review.desc" #desc="ngModel" required>
+        <div class="alert alert-danger"
+        *ngIf="desc.touched && desc.invalid">
+            Description is required
+        </div>
+       </div><br>
+   
+    <button type="submit" class="btn btn-primary"
+    [disabled]="reviewForm.invalid">Submit</button>
+  </form>
+ 

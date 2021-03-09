@@ -1,0 +1,36 @@
+<div class="card">
+    <div class="card-header  text-white bg-info">
+        <h3>product list:{{ message }}</h3>
+        <input [(ngModel)]="filterString" placeholder="filterby">
+        <h3>{{ filterString }}</h3>
+    </div>
+    <div class="card-body">
+       
+   
+        <table class="table">
+            <thead [ngStyle]="{backgroundColor:'black',color:'white'}">
+                <th>#</th>
+                <th>image</th>
+                <th>name</th>
+                <th>description</th>
+                <th>price</th>
+                <th>rating</th>
+            </thead>
+           <tbody>
+                <tr *ngFor="let prod of filterProd">
+                    <td>{{ prod.productid}}</td>
+                    <td><img [src]="prod.imageUrl" [alt]="prod.productname" [style.width]="60" [style.height]="90"></td>
+                    <td><a [routerLink]="['/products',prod.productid]">{{prod.productname}}</a></td>
+                    <td>{{ prod.productdesc}}</td>
+                    <td>{{ prod.productprice}}</td>
+                    <td><app-star [rating]="prod.rating" (ratingClick)="onratingClick($event)"></app-star>
+                    <button class="btn btn-primary" (click)="onset()">Add</button></td>
+
+
+                </tr>
+            </tbody>
+
+        </table>
+        
+    </div>
+</div>

@@ -1,0 +1,55 @@
+<div class="container">
+    <div class="row">
+        <div class="col-xs-12">
+            
+            <form [formGroup]="newform" (ngSubmit)="onsubmit()" class="border border-info" style="padding:60px 60px 60px 60px;border-radius: 40px;">
+              <div class="form-group mt-3">
+                    <label for="fname"> Name</label>
+                    <input type="text" class="form-control" id="fname" formControlName="Name" >
+                    <div class="alert alert-danger" *ngIf="firstnamectrl.touched && firstnamectrl.invalid">
+                        <span *ngIf="firstnamectrl.errors.required">Name is required</span>
+                        <span *ngIf="firstnamectrl.errors.minlength">Name should contain atleast 3 character</span>
+                        <span *ngIf="firstnamectrl.errors.forbiddenname">{{firstnamectrl.errors.forbiddenname}} is forbiddenname</span>
+                    </div>
+                    </div>
+                
+                 <div class="form-group mt-3">
+                            <label for="ema"> email</label>
+                            <input type="email" class="form-control" id="ema" formControlName="email" >
+                            <div class="alert alert-danger" *ngIf="emctrl.touched && emctrl.invalid">
+                                <span *ngIf="emctrl.errors.required">email  is required</span>
+                                <span *ngIf="emctrl.errors.pattern">The email address must contain at least the @ character</span>
+                        </div>
+                            </div>
+                            <div class="form-group mt-3">
+                                <label for="ph"> Mobile</label>
+                                <input type="text" class="form-control" id="ph" formControlName="mobile">
+                                <div class="alert alert-danger" *ngIf="mobilectrl.touched && mobilectrl.invalid">
+                                        <span *ngIf="mobilectrl.errors.required">mobile number is required</span>
+                                        <span *ngIf="mobilectrl.errors.pattern">please enter 10 digit mobile no</span>
+                                </div>
+                                </div>
+                                <div class="form-group mt-3">
+                                    <label for="pass"> password</label>
+                                    <input type="password" class="form-control" id="pass" formControlName="password">
+                                    <div class="alert alert-danger" *ngIf="passctrl.touched && passctrl.invalid">
+                                        <span *ngIf="passctrl.errors.required"> password is required</span>
+                                    </div>
+                                    </div>
+                                    <div class="form-group mt-3">
+                                        <label for="cnfpass"> cnfpassword</label>
+                                        <input type="password" class="form-control" id="cnfpass" formControlName="cnfpass" >
+                                        <div class="alert alert-danger" *ngIf="cnfctrl.touched && cnfctrl.invalid">
+                                            <span *ngIf="cnfctrl.errors.required">cnfpassword is required</span>
+                                                <span *ngIf="cnfctrl.errors.comparepass">cnfpassword does not match</span>
+            
+                                        </div>
+                                        </div><br>
+                                        <button type="submit" class="btn btn-primary"
+                                        [disabled]="newform.invalid">submit</button>
+                                  
+                                    </form>
+                                       
+        </div>
+    </div>
+</div>
